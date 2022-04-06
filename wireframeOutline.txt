@@ -1,0 +1,64 @@
+[REQUIRED] Name: Caleb Rank
+[REQUIRED] Project Title: Online | Snack Shack Management System
+[REQUIRED] Project Stack: MERN
+[REQUIRED] GitHub Repo Link: https://github.com/Vaanyic-CMR/Online-Snack_Shack_Management_System
+
+[REQUIRED] Project Description: 
+A system built for San Juan Bible Camp in Mancos, CO that tracks the inventory, account information, and purchases in their Snack Shack.
+
+Parents can set up a balance in their child's account which can be used throughout the week to purchase snacks and merch.
+Staff are also able to set up balances to store any money they may want to use.
+These accounts will not be individual user accounts but rather data associated to a specific company.
+
+This system will be an online based version of the system I am already working on as a local application (Currently Incomplete).
+
+[REQUIRED] New Programming Concept(s) I'm Planning to Learn:
+- Relationships between models in MongoDB.
+- Login/Registration and authentication.
+
+[REQUIRED] Week 1 Features (to show at Review during Week 2)
+- Company Login/Registration.
+- Basic inventory and account CRUD, both client and server.
+- Balance accounts seperated by company, year, and age group.
+
+[REQUIRED] Week 2 Features (to show at first office hour/lecture of Week 3)
+- ***Finish CSS work (could be Bootstrap or another framework too instead of CSS)***
+- Complete CRUD on both client and server.
+- Operational transactions and transaction history.
+- Default: 5 seperate products can be purchased at a time. Can add additional rows of 5 products.
+
+[REQUIRED] Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
+- Inventory will track # of a product in stock and when below a company determined threshold, will add product to a shopping list.
+- System can handle cash and partial cash transactions. Not just account transactions.
+- System can handle product refunds (merch only).
+- Handling remaining balances at the end of a camp based on prior parent decision:
+    - A) Return remaining balance.
+    - B) Donate remaining balance.
+    - C) Combination of A & B.
+    - D) Transfer to different account (such as another child of the same parent).
+
+- User Login/Registration.
+- Companies can add/remove individual users to their company/group and appoint admins.
+- Users can access transaction handling pages for the company they are associated with and operate the system similar to a cash register.
+- Including the access Users have, companies and admins of those companies can view or modify inventory and account information.
+
+- Possibly Socket.io for up to date data such as inventory.
+
+
+
+
+Other Week 1 Tasks
+- Sign up for a group (https://docs.google.com/spreadsheets/d/17amQ1VW4wAWI9tz-9qVTq9pf1HCAnQkki_3W8tLbOLY/edit#gid=0)
+- Schedule a Review during Week 2 (https://calendly.com/d/cnc-5t7-4yv/solo-project-sprint-w1-review)
+- Create GitHub repo for project
+- Create a .gitignore file for my project for my GitHub repo (enter in React, Python, or Java at https://www.toptal.com/developers/gitignore)
+- Finish this completed txt file and create project wireframe using Balsamiq (https://balsamiq.com/wireframes/) [Drawings and other wireframe programs also accepted!]
+- Email Zack this completed txt file, and project wireframe for approval
+- Submit completed wireframe on platform (https://login.codingdojo.com/m/97/6237/44911)
+- Complete Arrays To Do 1 & Arrays To Do 2 assignments
+
+
+Other Week 2 Tasks
+- Schedule my time for my presentation (https://docs.google.com/spreadsheets/d/17amQ1VW4wAWI9tz-9qVTq9pf1HCAnQkki_3W8tLbOLY/edit#gid=414986054)
+- Begin to talk with group about project ideas and what skills I bring to the table
+- Complete Singly Linked Lists Fronts & Display assignments
