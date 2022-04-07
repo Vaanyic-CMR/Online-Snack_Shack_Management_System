@@ -17,18 +17,18 @@ This system will be an online based version of the system I am already working o
 - Login/Registration and authentication.
 
 [REQUIRED] Week 1 Features (to show at Review during Week 2)
-- Company Login/Registration.
-- Basic inventory and account CRUD, both client and server.
-- Balance accounts seperated by company, year, and age group.
+- Complete CRUD on both client and server.
+- Balance accounts seperated by age group / camp.
 
 [REQUIRED] Week 2 Features (to show at first office hour/lecture of Week 3)
 - ***Finish CSS work (could be Bootstrap or another framework too instead of CSS)***
-- Complete CRUD on both client and server.
 - Operational transactions and transaction history.
 - Default: 5 seperate products can be purchased at a time. Can add additional rows of 5 products.
 
 [REQUIRED] Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
-- Inventory will track # of a product in stock and when below a company determined threshold, will add product to a shopping list.
+- Company Login/Registration.
+
+- Inventory will track # of a product in stock (including individual clothing sizes) and when below a company determined threshold, will add product to a shopping list.
 - System can handle cash and partial cash transactions. Not just account transactions.
 - System can handle product refunds (merch only).
 - Handling remaining balances at the end of a camp based on prior parent decision:
