@@ -11,7 +11,6 @@ const AccountSchema = new mongoose.Schema( {
     },
     currBalance: {
         type: Number,
-        default: initBalance
     },
     currSpent: {
         type: Number,
@@ -26,6 +25,11 @@ const AccountSchema = new mongoose.Schema( {
         default: 0.0
     }
 }, { timestamps: true } );
+
+AccountSchema.pre("save", function(next) {
+    this.currBalance = this.get("initBalance");
+    next();
+});
 
 // Pre hook for `findOneAndUpdate`
 AccountSchema.pre('findOneAndUpdate', function(next) {

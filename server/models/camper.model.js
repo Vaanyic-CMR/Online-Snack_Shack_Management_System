@@ -26,7 +26,7 @@ const CamperSchema = new mongoose.Schema( {
         default: "return"
     },
     account: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Types.ObjectId,
         ref: "Account"
     }
 }, { timestamps: true } );

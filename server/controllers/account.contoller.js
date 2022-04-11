@@ -1,19 +1,19 @@
 const Account = require("../models/account.model");
 
+module.exports.getAllAccounts = (_req, res) => {
+    Account.find({}).populate({ path: "camper", model:"Camper"})
+        .then( accounts => res.json(accounts) )
+        .catch( error => res.json(accounts) );
+};
+
 module.exports.getAccount = (req, res) => {
-    Account.findOne( {_id: req.params.id} )
+    Account.findOne( {_id: req.params.id} ).populate({ path: "camper", model:"Camper"})
         .then( account => res.json(account) )
         .catch( error => res.json(error) );
 };
 
-module.exports.createAccount = (req, res) => {
-    Account.create( req.body )
-        .then( newAccount => newAccount )
-        .catch( error => res.json(error) );
-};
-
-module.exports.updateCamper = (req, res) => {
-    Camper.findOneAndUpdate( {_id: req.params.id}, req.body, {new: true} )
-        .then( updatedCamper => res.json({ updatedCamper }) )
-        .catch( error => res.status(400).json(error) );
+module.exports.deleteAccount = (req, res) => {
+    Account.findOneAndDelete( {_id: req.params.id} )
+        .then( confirmation => res.json(confirmation) )
+        .catch( err => res.json(err) );
 };

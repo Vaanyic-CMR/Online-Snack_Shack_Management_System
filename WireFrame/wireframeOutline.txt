@@ -17,12 +17,12 @@ This system will be an online based version of the system I am already working o
 - Login/Registration and authentication.
 
 [REQUIRED] Week 1 Features (to show at Review during Week 2)
-- Complete CRUD on both client and server.
+- Complete CRUD on server.
 - Balance accounts seperated by age group / camp.
 
 [REQUIRED] Week 2 Features (to show at first office hour/lecture of Week 3)
 - ***Finish CSS work (could be Bootstrap or another framework too instead of CSS)***
-- Operational transactions and transaction history.
+- Operational transactions.
 - Default: 5 seperate products can be purchased at a time. Can add additional rows of 5 products.
 
 [REQUIRED] Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
