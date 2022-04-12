@@ -1,7 +1,7 @@
 const Inventory = require("../models/inventory.model");
 
 module.exports.getAll = (_req, res) => {
-    Inventory.find({})
+    Inventory.find({}).sort([['category', -1], ['name', 1]])
         .then( products => res.json(products) )
         .catch( error => res.json(error) )
 };

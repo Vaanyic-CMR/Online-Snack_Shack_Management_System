@@ -33,7 +33,7 @@ module.exports.createCamper = async (req, res) => {
     newCamper.account = toID(newAccount._id);
     newAccount.camper = toID(newCamper._id);
     newCamper.save();
-    newAccount.save()
+    newAccount.save();
     res.json(newCamper);
 };
 
