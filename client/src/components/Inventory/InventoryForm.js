@@ -1,5 +1,3 @@
-
-
 const InventoryForm = props => {
     const { name, setName,
             category, setCategory,

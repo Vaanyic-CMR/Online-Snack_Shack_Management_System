@@ -18,7 +18,7 @@ const CamperSchema = new mongoose.Schema( {
     },
     camp: {
         type: String,
-        required: [ true, "Camper must belong to an age group camp." ],
+        required: [ true, "Camper must belong to an age group/camp." ],
         enum: [ "trekker", "pathfinder", "journey", "trail blazer", "navigator" ]
     },
     eow_remaing: {

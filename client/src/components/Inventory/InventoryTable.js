@@ -10,7 +10,7 @@ const InventoryTable = _props => {
         axios.get("http://localhost:8000/api/inventory")
             .then( res => setInventory(res.data) )
             .catch( error => console.log(error) );
-    }, [inventory] );
+    }, [] );
 
     const removeFromDom = itemID => setInventory( inventory.filter(item => item._id != itemID) );
 
@@ -22,6 +22,7 @@ const InventoryTable = _props => {
 
     return(
         <div className="table-responsive-xxl bg-light mt-3 p-3 rounded">
+        <h5 className="text-start">Sorted By: <span className="text-secondary">{ "Category -> Name" }</span></h5>
         <table className="table table-sm table-light table-striped table-hover table-bordered shadow">
             <thead>
                 <tr>
