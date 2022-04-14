@@ -6,6 +6,13 @@ module.exports.getAll = (_req, res) => {
         .catch( error => res.json(error) )
 };
 
+module.exports.getAllIdsNames = (_req, res) => {
+    Inventory.find({}, {_id: 1, name: 1})
+        .sort([['category', -1], ['name', 1]])
+            .then( campers => res.json(campers) )
+            .catch( error => res.json(error) );
+};
+
 module.exports.getOne = (req, res) => {
     Inventory.findOne( {_id: req.params.id} )
         .then( product => res.json(product) )

@@ -6,5 +6,5 @@ module.exports = app => {
     app.get("/api/campers/:id", CamperController.getCamper );
     app.put("/api/campers/:id", CamperController.updateCamper );
     app.delete("/api/campers/:id", CamperController.deleteCamper );
-    app.get("/api/camp/:camp", CamperController.getCampersByCamp );
+    app.get("/api/campers/camp/:camp", CamperController.getCampersByCamp );
 };

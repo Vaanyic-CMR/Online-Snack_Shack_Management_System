@@ -23,12 +23,13 @@ This system will be an online based version of the system I am already working o
 [REQUIRED] Week 2 Features (to show at first office hour/lecture of Week 3)
 - ***Finish CSS work (could be Bootstrap or another framework too instead of CSS)***
 - Operational transactions.
-- Default: 5 seperate products can be purchased at a time. Can add additional rows of 5 products.
+- Default: 5 seperate products can be purchased at a time.
 
 [REQUIRED] Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
 - Company Login/Registration.
 
 - Inventory will track # of a product in stock (including individual clothing sizes) and when below a company determined threshold, will add product to a shopping list.
+- Transactions page can add additional rows of 5 products dynamically.
 - System can handle cash and partial cash transactions. Not just account transactions.
 - System can handle product refunds (merch only).
 - Handling remaining balances at the end of a camp based on prior parent decision:
@@ -42,7 +43,7 @@ This system will be an online based version of the system I am already working o
 - Users can access transaction handling pages for the company they are associated with and operate the system similar to a cash register.
 - Including the access Users have, companies and admins of those companies can view or modify inventory and account information.
 
-- Possibly Socket.io for up to date data such as inventory.
+- Possibly Socket.io for up-to-date data such as inventory or active camper.
 
 
 

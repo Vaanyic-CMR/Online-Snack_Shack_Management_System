@@ -9,9 +9,9 @@ const Header = props => {
     const { camperList, inventoryList, transactions } = props;
 
     // useState getters and/or setters
-    const { campers, setCamper } = props;
+    const { camperID, campers, setCamperData } = props;
     // const { year, setYear } = props;
-    const { setCamp } = props;
+    const { loadedCamp, camp, setCampData } = props;
 
     const handleClick = route => navigate( route )
 
@@ -40,6 +40,38 @@ const Header = props => {
                         >New Product</button>
                         :null
                     }
+                    <div className="row ms-3">
+                    {
+                        transactions?
+                        <select
+                            value={camp}
+                            className="form-select col"
+                            onChange={ e => setCampData(e.target.value) }
+                        >
+                            <option value="" disabled defaultValue hidden>Select Camp</option>
+                            <option value="trekker">Trekker</option>
+                            <option value="pathfinder">Pathfinder</option>
+                            <option value="journey">Journey</option>
+                            <option value="trail blazer">Trail Blazer</option>
+                            <option value="navigator">Navigator</option>
+                        </select>
+                        :null
+                    }
+                    {
+                        campers && loadedCamp?
+                        <select
+                            value={camperID}
+                            className="form-select col"
+                            onChange={ e => setCamperData(e.target.value) }
+                        >
+                            <option value="" disabled defaultValue hidden>Select Camper</option>
+                            { campers.map( (camper, index) => {
+                                return <option key={index} value={camper._id}>{ camper.firstName } { camper.lastName }</option>
+                            }) }
+                        </select>
+                        :null
+                    }
+                    </div>
                 </div>
                 <ul className="navbar-nav mb-md-0">
                     <li className="nav-item">

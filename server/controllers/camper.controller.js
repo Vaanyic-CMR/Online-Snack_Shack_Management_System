@@ -13,9 +13,10 @@ module.exports.getAllCampers = (_req, res) => {
 };
 
 module.exports.getCampersByCamp = (req, res) => {
-    Camper.find( {camp: req.params.camp} ).populate({ path: "account", model:"Account"})
-        .then( campers => res.json(campers) )
-        .catch( error => res.json(error) );
+    Camper.find( {camp: req.params.camp}, {_id: 1, firstName: 1, lastName:1} )
+        .sort([['firstName', 1], ['lastName', 1]])
+            .then( campers => res.json(campers) )
+            .catch( error => res.json(error) );
 };
 
 module.exports.getCamper = (req, res) => {
