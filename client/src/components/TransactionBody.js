@@ -1,7 +1,10 @@
 import InventoryBlock from "./subcomponents/InventoryBlock";
 
 const TransactionBody = props => {
-    const { updateValues, rows } = props;
+    const {
+        rows, changeHandler,
+        completeReset, setCompleteReset
+    } = props;
 
     return (
         <div className="pb-5 mb-5">
@@ -10,33 +13,38 @@ const TransactionBody = props => {
                     return (
                     <div key={index} className="row p-2">
                         <InventoryBlock
-                            row={row}
-                            changeHandler={updateValues}
+                            col={row.col1}
+                            changeHandler={changeHandler}
+                            completeReset={completeReset}
+                            setCompleteReset={setCompleteReset}
                         />
                         <InventoryBlock
-                            row={row}
-                            changeHandler={updateValues}
+                            col={row.col2}
+                            changeHandler={changeHandler}
+                            completeReset={completeReset}
+                            setCompleteReset={setCompleteReset}
                         />
                         <InventoryBlock
-                            row={row}
-                            changeHandler={updateValues}
+                            col={row.col3}
+                            changeHandler={changeHandler}
+                            completeReset={completeReset}
+                            setCompleteReset={setCompleteReset}
                         />
                         <InventoryBlock
-                            row={row}
-                            changeHandler={updateValues}
+                            col={row.col4}
+                            changeHandler={changeHandler}
+                            completeReset={completeReset}
+                            setCompleteReset={setCompleteReset}
                         />
                         <InventoryBlock
-                            row={row}
-                            changeHandler={updateValues}
+                            col={row.col5}
+                            changeHandler={changeHandler}
+                            completeReset={completeReset}
+                            setCompleteReset={setCompleteReset}
                         />
                     </div>
                 ) } )
             }
-            {/* <InventoryBlock />
-            <InventoryBlock />
-            <InventoryBlock />
-            <InventoryBlock />
-            <InventoryBlock /> */}
         </div>
     );
 };

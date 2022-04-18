@@ -20,16 +20,18 @@ const Transactions = _props => {
     const [ balance, setBalance ] = useState(0);
     const [ sumTotal, setSumTotal ] = useState(0);
 
+    // Retrieves all campers' name & IDs associated with selected camp.
     const setCampData = selectedCamp => {
         setCamp(selectedCamp);
         axios.get(`http://localhost:8000/api/campers/camp/${selectedCamp}`)
             .then( res => {
                 setCampers(res.data);
-                if (res.data.length > 0){ setLoadedCamp(true) }
-                else{ setLoadedCamp(false) };
+                if (res.data.length > 0) { setLoadedCamp(true) }
+                else { setLoadedCamp(false) };
             } )
             .catch( error => console.log(error) );
     };
+    // Retrieves all of selected camper's data.
     const setCamperData = camper_ID => {
         setCamperID(camper_ID);
         axios.get(`http://localhost:8000/api/campers/${camper_ID}`)
@@ -40,25 +42,68 @@ const Transactions = _props => {
             .catch( error => console.log(error) );
     };
 
-    const updateValues = () => {
-
-    };
-
     // Footer Button methods and row control
     class Row {
         constructor() {
-            this.col1 = { count: 0, item: "" }
-            this.col2 = { count: 0, item: "" }
-            this.col3 = { count: 0, item: "" }
-            this.col4 = { count: 0, item: "" }
-            this.col5 = { count: 0, item: "" }
-        }
-    }
-    const [ rows, setRows ] = useState([new Row()]);
-    const completeTransaction = () => {
-        setRows([new Row()]);
+            this.col1 = { blockTotal: 0 }
+            this.col2 = { blockTotal: 0 }
+            this.col3 = { blockTotal: 0 }
+            this.col4 = { blockTotal: 0 }
+            this.col5 = { blockTotal: 0 }
+        };
+        display() {
+            console.log(`Col 1 | Block Total: ${this.col1.blockTotal}`);
+            console.log(`Col 2 | Block Total: ${this.col2.blockTotal}`);
+            console.log(`Col 3 | Block Total: ${this.col3.blockTotal}`);
+            console.log(`Col 4 | Block Total: ${this.col4.blockTotal}`);
+            console.log(`Col 5 | Block Total: ${this.col5.blockTotal}`);
+        };
     };
+    const [ rows, setRows ] = useState([new Row()]);
+
+    // used to trigger an InventoryBlock value reset.
+    const [ completeReset, setCompleteReset ] = useState(false);
+    const completeTransaction = () => {
+        camper.account.currBalance -= sumTotal;
+        camper.account.currSpent += sumTotal;
+
+        axios.put(`http://localhost:8000/api/campers/${camper._id}`,
+            { camper, account: camper.account })
+            // .then( res => console.log( res ) )
+            .catch( error => console.log(error) );
+
+        setCamperID(""); setCamper({});
+        setBalance(0); setSumTotal(0);
+
+        setRows([new Row()]);
+        setCompleteReset(true);
+    };
+    // Adds a row of blocks for more items to be purchased.
     const addRow = () => setRows( [...rows, new Row()] );
+
+    // prevents alert loop on initial render.
+    const [ loaded, setLoaded ] = useState(false);
+    // Updates all values used to calculate purchase.
+    const updateValues = () => {
+        if ( !loaded ) { setLoaded(true) }
+        else if ( !camp ) {
+            alert("Warning: Camp not selected.\nPlease select a camp.")
+        }
+        else if ( !camperID ) {
+            alert("Warning: Camper not selected.\nPlease select a camper.")
+        }
+        else {
+            let sum = 0;
+            for ( let i=0; i<rows.length; i++) {
+                sum += rows[i].col1.blockTotal;
+                sum += rows[i].col2.blockTotal;
+                sum += rows[i].col3.blockTotal;
+                sum += rows[i].col4.blockTotal;
+                sum += rows[i].col5.blockTotal;
+            };
+            setSumTotal(sum);
+        };
+    };
 
     return(
         <div>
@@ -70,7 +115,8 @@ const Transactions = _props => {
             />
             <TransactionBody
                 rows={rows}
-                updateValues={updateValues}
+                changeHandler={updateValues}
+                completeReset={completeReset} setCompleteReset={setCompleteReset}
             />
             <Footer
                 completeTransaction={completeTransaction}

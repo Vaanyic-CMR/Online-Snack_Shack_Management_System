@@ -41,9 +41,10 @@ const InventoryForm = props => {
                     onChange={ e => setCategory(e.target.value) }
                     className="p-1 form-select"
                 >
-                    <option value="food & drink" selected>Food & Drink</option>
+                    <option value="food & drink" defaultValue>Food & Drink</option>
                     <option value="clothing">Clothing</option>
                     <option value="accessory">Accessory</option>
+                    <option value="other">Other</option>
                 </select>
             </div>
             <div className="row m-3 text-start">

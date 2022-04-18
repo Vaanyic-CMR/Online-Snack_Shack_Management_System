@@ -21,7 +21,7 @@ const Footer = props => {
                 </div>
             </div>
             <div className="col border"></div>
-            <div className="col-3">
+            <div className="col-4">
                 <button
                     className="btn btn-secondary m-2"
                     onClick={ completeTransaction }

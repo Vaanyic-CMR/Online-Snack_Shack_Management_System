@@ -9,7 +9,7 @@ const InventorySchema = new mongoose.Schema( {
     category: {
         type: String,
         required: [ true, "Product must belong to a category." ],
-        enum: [ "food & drink", "clothing", "accessory" ]
+        enum: [ "food & drink", "clothing", "accessory", "other" ]
     },
     price: {
         type: Number,

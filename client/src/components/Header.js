@@ -61,7 +61,7 @@ const Header = props => {
                         campers && loadedCamp?
                         <select
                             value={camperID}
-                            className="form-select col"
+                            className="form-select col ms-1"
                             onChange={ e => setCamperData(e.target.value) }
                         >
                             <option value="" disabled defaultValue hidden>Select Camper</option>
